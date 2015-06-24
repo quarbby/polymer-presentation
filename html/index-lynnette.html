@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Lynnette Ng</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/main_2.css">
+
+        <!-- Google Montserrat Font --> 
+        <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+        <link href="css/animate.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+    </head>
+    <body>
+        <div class="intro" id="intro">
+                
+                <nav class="wow bounceInRight">
+                    <ul>      
+                        <li class="introed"><a class="selected" href="#intro">INTRO</a></li>
+                        <li class="about"><a href="#about">ABOUT ME</a></li>
+                        <li class="contact"><a href="mailto:lynnette-ng@outlook.com">CONTACT</a></li>
+                    </ul>
+                </nav>
+                
+                <div data-0="opacity:1;top:3%;transform:rotate(0deg);transform-origin:0 0;" data-500="opacity:0;top:-40%;transform:rotate(-90deg);" class="skrollable rendered" style="opacity: 1; top: 3%; -webkit-transform: rotate(0deg); -webkit-transform-origin: 0px 0px;">
+                    <h1 class="wow bounceInUp">Lynnette Ng</h1>
+                    <p class="wow bounceInUp">A Computer Scientist Trying to be Creative</p>
+                    <div class="wow bounceInUp">
+                    <a href="http://www.twitter.com/quarbby"><span class="twitterIcon"></span></a>
+                    <a href="http://www.github.com/quarbby"><span class="githubIcon"></span></a>
+                    <a href="http://plus.google.com/+LynnetteNg/posts"><span class="googleplusIcon"></span></a></div>
+                </div>
+
+                <div class="arrow skrollable unrendered " data-100="transform: translateY(0in);opacity:0;" data-150="transform: translateY(-2in);opacity:1;" data-200="transform: translateY(-1in);opacity:1;" data-250="transform: translateY(1in);opacity:1;" data-300="transform: translateY(0in);opacity:1;" data-350="transform: translateY(1in);opacity:1;" data-400="transform: translateY(2in);opacity:1;" data-500="transform: translateY(7in);opacity:1;" style="-webkit-transform: translateY(-7in); opacity: 0;">
+                    <img src="/img/down_arrow.png" height="100px" />
+                </div>
+
+
+            </div>
+        <div style="overflow-x: hidden">
+            
+
+            <div class="aboutMe" id="about">
+                <h2 data-300="transform: scale(0, 0);opacity:0;" data-400="transform: scale(1, 1);opacity:1;" class="skrollable unrendered" style="-webkit-transform: scale(1, 1); opacity: 1;">About Lynnette</h2>
+
+                <div class="col-l skrollable unrendered " data-300="transform: translateX(-1500px);opacity:0;" data-400="transform: translateX(0px);opacity:1;" style="-webkit-transform: translateX(0px); opacity: 1;">
+                    <p><span class="firstletter">H</span>i! I'm a final year Computer Science student at National University of Singapore.
+                    I try to finish up the Artificial Intelligence and Information Retrieval focus areas and survive my FYP on 
+                    3D Face Makeup Transfer, even though I'm horrible at putting on make up. And sometimes, I dress up 
+                    as an Android during Halloween because we are #socfamily.</p>
+                    
+                    <p>When I am not coding, I'm reading The Time Traveller's Wife, John Grisham and random 
+                    articles on Flipboard. Okay, actually, most of the time I just daydream about life. Yes, really, life.</p>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- Load Jquery -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Load the js files -->
+        <script type="text/javascript" src="/js/wow.min.js"></script>
+        <script type="text/javascript" src="/js/skrollr.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.knob.js"></script>
+        
+        <script>
+         new WOW().init();
+        </script>
+        <script type="text/javascript">
+            var s = skrollr.init({
+                beforerender: function(data) {
+                    //console.log('beforerender');
+                },
+                render: function() {
+                    //console.log('render');
+                },
+                easing: {
+                    WTF: Math.random,
+                    inverted: function(p) {
+                        return 1-p;
+                    }
+                },
+                forceHeight: false
+            });
+        </script>
+        <script type="text/javascript">
+            $(function() {
+                $(".70").knob({
+                    'readOnly': true,
+                    'width': 113,
+                    'height': 113
+                });
+                $(".80").knob({
+                    'readOnly': true,
+                    'width': 113,
+                    'height': 113,
+                    'fgColor': 'green',
+                    'inputColor': 'green'
+                });
+                $(".60").knob({
+                    'readOnly': true,
+                    'width': 113,
+                    'height': 113,
+                    'fgColor': 'red',
+                    'inputColor': 'red'
+                });
+                $(".50").knob({
+                    'readOnly': true,
+                    'width': 113,
+                    'height': 113,
+                    'fgColor': 'purple',
+                    'inputColor': 'purple'
+                });
+            });
+        </script>
+
+    </body>
+</html>
