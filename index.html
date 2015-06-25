@@ -53,16 +53,24 @@
 			Mousetrap.bind('e g g', function() { 
 				console.log('minion'); 
 				var curSlide = Reveal.getCurrentSlide();
-				
-				var img = new Image();
-				
-				img.onload = function() {
-				  curSlide.appendChild(img);
-				};
-
+				var img = document.createElement("img");
+				img.setAttribute('class', 'minion');
 				img.src = "./img/minion.jpg";
-
-				console.log(curSlide);
+				curSlide.appendChild(img);
+				
+			});
+			
+			Mousetrap.bind('< 3', function() {
+			   console.log("<3"); 
+			   alert("Lynnette loves Adrian!");
+			});
+			
+			Mousetrap.bind('rmin', function() {
+			    var minions = document.getElementsByClass('minion');
+			    console.log(minions);
+				if(minions[i] && minions[i].parentElement){
+					minions[i].parentElement.removeChild(minions[i]);
+				}
 			});
 		
 			Reveal.initialize({
