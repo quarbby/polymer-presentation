@@ -45,10 +45,26 @@
             </div>
         </div>
         
-		<script src="lib/js/head.min.js"></script>
+        <script src="js/mousetrap.min.js"></script>
+    	<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
 		<script>
+			Mousetrap.bind('e g g', function() { 
+				console.log('minion'); 
+				var curSlide = Reveal.getCurrentSlide();
+				
+				var img = new Image();
+				
+				img.onload = function() {
+				  curSlide.appendChild(img);
+				};
+
+				img.src = "./img/minion.jpg";
+
+				console.log(curSlide);
+			});
+		
 			Reveal.initialize({
 				controls: true,
 				progress: true,
