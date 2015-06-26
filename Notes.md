@@ -31,3 +31,4 @@
 * Hope for Polymer 
 * Shadow DOM & encapsulated CSS 
 * Lots of functionalities 
+* Polymer vs Angular vs JQuery

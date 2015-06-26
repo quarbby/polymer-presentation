@@ -35,11 +35,118 @@
                 </section>
                 
                 <section>
-                    <h2>Test again</h2>
+                    <h2><a href="https://www.polymer-project.org/1.0/">Google Polymer</a></h2>
+                    <div>
+        				Production Ready 1.0 version released on 29 May 2015
+
+        				Google Element Catalog: A collection of Web Components
+        			<div>
+        			<div>
+						<img src="./img/polymer-elements.png" >
+        			</div>
+                </section>
+                
+                 <section>
+                 	<section>
+	                	<h2>Google Material Design Framework</h2>
+	                	<div>Which Google Polymer is based on <br>
+	                	</div>                 		
+                 	</section>
+                 	
+                	<section>
+                		<h2>Paper is the Metaphor</h2>
+                		<iframe width="1000" height="500" src="https://www.youtube.com/embed/Q8TXgCzxEnw?autoplay=1"></iframe>
+                	</section>
+                	
+                	<section>
+                		<h2>Colour Templates</h2>
+                	</section>
+                	
+                	<section>
+                		<h2>Animations</h2>
+                		<div>Paper Ripple, Neon Animation</div>
+                	</section>
+                	
                 </section>
                 
                 <section>
-                    <h2>HEHHEHEHE</h2>
+                	<section>
+                		<h2>Polymer vs AngularJS vs JQuery</h2>
+                		<h3>A Comparison in June 2015</h3>
+                	</section>
+					<section>
+						<table class="reveal">
+							<thread>
+								<tr>
+									<th></th>
+									<th>Polymer</th>
+									<th>AngularJS</th>
+									<th>JQuery</th>
+								</tr>
+							</thread>
+						<tbody>
+							<tr>
+								<td><strong>Current Version</strong></td>
+								<td>1.0.4</td>
+								<td>1.4.1 (2.0 coming) </td>
+								<td>1.9</td>
+							<tr>
+							<tr>
+								<td><strong>Best for</strong></td>
+								<td>Building encapsulated web components</td>
+								<td>Framework for SPAs</td>
+								<td>Collection of tools</td>
+							<tr>
+							<tr>
+								<td><strong>OS/ Platform</strong></td>
+								<td>Browser based, adapts to window size</td>
+								<td>2</td>
+								<td>JQuery Mobile</td>
+							<tr>
+							<tr>
+								<td><strong>Data Persistence</strong></td>
+								<td>Browser based, adapts to window size</td>
+								<td>2</td>
+								<td>JQuery Mobile</td>
+							<tr>								
+						</tbody>
+						</table>
+					</section>
+					<section>
+						<h2>Some thoughts</h2>
+						<table class="reveal">
+							<tbody>
+								<tr>
+									<td><strong>Polymer</strong></td>
+									<td>
+										Wait for more stability & documentation <br>
+									</td>
+								</tr>
+								<tr>
+									<td><strong>AngularJS</strong></td>
+									<td>
+										Useful for  web framework with data
+									</td>
+								</tr>
+								<tr>
+									<td><strong>JQuery</strong></td>
+									<td>
+										Useful for tools (animation, ajax)
+									</td>
+								</tr>	
+								<tr>
+									<td><strong>Polymer + Angular</strong></td>
+									<td>
+										Best combination for full stack <br>
+										Mentioned in Google I/O 2015 <br>
+										Had problems with conflicting templating syntax <br>
+										Solution: Change Angular <a href="https://docs.angularjs.org/api/ng/provider/$interpolateProvider">
+											Interpolate Provider</a>
+									</td>
+								</tr>									
+							</tbody>
+						</table>
+					</section>
                 </section>                
                 
             </div>
@@ -65,12 +172,16 @@
 			   alert("Lynnette loves Adrian!");
 			});
 			
-			Mousetrap.bind('rmin', function() {
-			    var minions = document.getElementsByClass('minion');
-			    console.log(minions);
-				if(minions[i] && minions[i].parentElement){
-					minions[i].parentElement.removeChild(minions[i]);
-				}
+			Mousetrap.bind('r m e', function() {
+			    var minions = document.getElementsByClassName('minion');
+			    if (minions.length > 0) {
+			    	for (var i=0; i<minions.length; i++) {
+				    	if(minions[i] && minions[i].parentElement){
+							minions[i].parentElement.removeChild(minions[i]);
+						}			    		
+			    	}
+			    }
+
 			});
 		
 			Reveal.initialize({
