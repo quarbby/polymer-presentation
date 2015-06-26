@@ -46,6 +46,12 @@
         			</div>
                 </section>
                 
+                <section>
+                	<h2>Hyde</h2>
+                	<p>Built with Polymer, Mongoose, Leaflet & OneMap on <br>Cloud9 IDE</p>
+                	<img src="img/Hyde.png">
+                </section>
+
                  <section>
                  	<section>
 	                	<h2>Google Material Design Framework</h2>
@@ -55,16 +61,46 @@
                  	
                 	<section>
                 		<h2>Paper is the Metaphor</h2>
-                		<iframe width="1000" height="500" src="https://www.youtube.com/embed/Q8TXgCzxEnw?autoplay=1"></iframe>
+                		<iframe width="1000" height="500" src="https://www.youtube.com/embed/Q8TXgCzxEnw"></iframe>
                 	</section>
                 	
                 	<section>
-                		<h2>Colour Templates</h2>
+                		<h2>Colour & Shadow Templates</h2>
+                		<p>Found in paper-styles</p>
+                		<pre><code data-trim contenteditable>
+  link rel="import" href="bower_components/paper-styles/paper-styles.html"
+                		</code></pre>
+                		<pre><code>
+#newsDesc {
+    color: var(--google-blue-100);
+  }	
+                		</code></pre>
+					<img src="img/blue.png" width=500px>
                 	</section>
                 	
                 	<section>
                 		<h2>Animations</h2>
                 		<div>Paper Ripple, Neon Animation</div>
+                	</section>
+                	
+                </section>
+                
+                <section>
+                	<section>
+                		<h2>Custom Elements</h2>
+                		<p>Making your own elements</p>
+                		<p>Community of elements at 
+                		<a href="https://customelements.io/">customelements.io</a></p>
+                	</section>
+                	
+                	<section>
+                		<h2>Abstraction of Web Components</h2>
+                		Insert repetitive code here 
+                	</section>
+                	
+                	<section>
+                		<h2>Shadow DOM & Encapsulation</h2>
+                		Insert encapsulated styles here 
                 	</section>
                 	
                 </section>
@@ -84,17 +120,17 @@
 									<th>JQuery</th>
 								</tr>
 							</thread>
-						<tbody>
+						<tbody style="font-size:30px;">
 							<tr>
-								<td><strong>Current Version</strong></td>
-								<td>1.0.4</td>
-								<td>1.4.1 (2.0 coming) </td>
-								<td>1.9</td>
+								<td><strong>Ease of Use</strong></td>
+								<td>Easy<br>Too new</td>
+								<td>Easier<br> Many community- published directives</td>
+								<td>Easiest<br>huge community</td>
 							<tr>
 							<tr>
 								<td><strong>Best for</strong></td>
 								<td>Building encapsulated web components</td>
-								<td>Framework for SPAs</td>
+								<td>Framework for SPAs + data binding</td>
 								<td>Collection of tools</td>
 							<tr>
 							<tr>
@@ -115,11 +151,15 @@
 					<section>
 						<h2>Some thoughts</h2>
 						<table class="reveal">
-							<tbody>
+							<tbody style="font-size:33px">
 								<tr>
 									<td><strong>Polymer</strong></td>
 									<td>
 										Wait for more stability & documentation <br>
+										Current status: Migration from 0.5 
+										(some documentation pages still using 0.5)<br>
+										New components being pushed out, best to wait until stable
+										otherwise develop unnecessarily
 									</td>
 								</tr>
 								<tr>
@@ -149,60 +189,19 @@
 					</section>
                 </section>                
                 
+            <section>
+            	<h2>Final Thoughts</h2>
+            	<h1>Polymer is promising</h1>
+            </section>
+            
             </div>
         </div>
         
         <script src="js/mousetrap.min.js"></script>
     	<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+		<script src="js/main.js"></script>
 
-		<script>
-			Mousetrap.bind('e g g', function() { 
-				console.log('minion'); 
-				var curSlide = Reveal.getCurrentSlide();
-				var img = document.createElement("img");
-				img.setAttribute('class', 'minion');
-				img.src = "./img/minion.jpg";
-				curSlide.appendChild(img);
-				
-			});
-			
-			Mousetrap.bind('< 3', function() {
-			   console.log("<3"); 
-			   alert("Lynnette loves Adrian!");
-			});
-			
-			Mousetrap.bind('r m e', function() {
-			    var minions = document.getElementsByClassName('minion');
-			    if (minions.length > 0) {
-			    	for (var i=0; i<minions.length; i++) {
-				    	if(minions[i] && minions[i].parentElement){
-							minions[i].parentElement.removeChild(minions[i]);
-						}			    		
-			    	}
-			    }
-
-			});
-		
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-				]
-			});
-
-		</script>        
-        
-        
     </body>
     
 </html>
