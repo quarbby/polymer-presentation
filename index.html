@@ -35,21 +35,61 @@
                 </section>
                 
                 <section>
-                    <h2><a href="https://www.polymer-project.org/1.0/">Google Polymer</a></h2>
-                    <div>
-        				Production Ready 1.0 version released on 29 May 2015
+                	<section>
+	                    <h2><a href="https://www.polymer-project.org/1.0/">Google Polymer</a></h2>
+	                    <div>
+	        				Production Ready 1.0 version released on 29 May 2015
+	
+	        				Google Element Catalog: A collection of Web Components
+	        			<div>
+	        			<div>
+							<img src="./img/polymer-elements.png" >
+	        			</div>                		
+                	</section>
 
-        				Google Element Catalog: A collection of Web Components
-        			<div>
-        			<div>
-						<img src="./img/polymer-elements.png" >
-        			</div>
-                </section>
+					<section>
+						<h2>Getting Started with Google Polymer</h2>
+						<ul>
+							<li>Installing via Bower: 
+							<pre><code data-trim>
+bower install --save Polymer/polymer#^1.0.0							
+							</code></pre>
+							</li>
+							<li>Browse Element Catalog and <em>bower install</em><br>
+							your desired element, i.e:
+							<pre><code data-trim>
+bower install --save PolymerElements/paper-drawer-panel#^1.0.0							
+							</code></pre>		
+							Versions may update but bower handles it for you! <br>
+							Also, <em>bower update</em> as Polymer is developing rapidly!
+							</li>
+						</ul>
+					</section>
+
+                </section>                
                 
                 <section>
+                	<section>
                 	<h2>Hyde</h2>
                 	<p>Built with Polymer, Mongoose, Leaflet & OneMap on <br>Cloud9 IDE</p>
-                	<img src="img/Hyde.png">
+                	<img src="img/Hyde.png">                		
+                	</section>
+                	
+                	<section>
+                		<h2>Hyde Elements</h2>
+                		<img src="img/Slide2.jpg" width=1200px>
+                	</section>
+                	
+                	<section>
+                		<h2>Hyde Elements</h2>
+                		<img src="img/Slide1.jpg" width=1200px>
+                	</section>
+                	
+                	<section>
+                		<h2>Hyde Elements</h2>
+                		To Put Google Charts here 
+                	</section>
+
                 </section>
 
                  <section>
@@ -80,8 +120,52 @@
                 	
                 	<section>
                 		<h2>Animations</h2>
-                		<div>Paper Ripple, Neon Animation</div>
+                		<p style="font-size:20px;">Paper Ripple, Neon Animation</p>
+                		
+<pre><code data-trim contenteditable>
+<paper-item>
+    <paper-ripple></paper-ripple>
+</paper-item>  
+</code></pre>
+
+<pre><code data-trim contenteditable>
+<paper-dialog entry-animation="scale-up-animation"
+			exit-animation="fade-out-animation">
+</paper-dialog>
+</code></pre>
+					<img src="img/ripple.gif">
                 	</section>
+                	
+                <section>
+                	<h2>Google Web Components: Iron-AJax</h2>
+                	<p style="text-size:25px;"> 
+                	<ul>
+                		<li>Makes AJAX calls for Google RSS feed in custom element</li>
+                		<li>Use <em>dom-repeat</em> template to create a <em>news-item</em>
+                		element for each JSON entry in the feed</li>
+                		<li>Bind entries to <em>items</em> attribute</li>
+                		<li>Get required value of item like: <em>{{item.title}}</em></li>
+                	</ul>
+                	</p>
+
+<pre><code data-trim contenteditable>
+<template>
+    <iron-ajax url= {{fullUrl}}
+        auto last-response="{{resp}}"
+        handle-as"json"
+        on-response="handleResponse"></iron-ajax>
+    <template is="dom-repeat" items={{resp.responseData.feed.entries}}>
+        <news-item link={{item.link}} 
+            news={{item.title}}
+            desc={{item.contentSnippet}}></news-item>
+    </template>
+</template>	
+</code></pre>                		
+                </section>
+                
+                <section>
+                	<h2>Google Web Components: Google Charts</h2>
+                </section>
                 	
                 </section>
                 
@@ -91,19 +175,138 @@
                 		<p>Making your own elements</p>
                 		<p>Community of elements at 
                 		<a href="https://customelements.io/">customelements.io</a></p>
+                		Let people use your element @
+                			<a href="https://www.polymer-project.org/1.0/docs/start/reusableelements.html
+">Reusable Elements</a>!
                 	</section>
                 	
                 	<section>
                 		<h2>Abstraction of Web Components</h2>
-                		Insert repetitive code here 
+						<p style="text-size:25px">
+							Problem: Repetitive Code Blocks
+						<br>
+						Solution: Define your own custom element!<br>
+						That's the essence of Web Components</p>
+						<div style="float:center;">
+							<img src="img/news-news-edited.png">
+						</div>
                 	</section>
                 	
                 	<section>
-                		<h2>Shadow DOM & Encapsulation</h2>
-                		Insert encapsulated styles here 
+                		<h2>Custom Elements: Shadow DOM</h2>
+						<p style="text-size:25px">
+						<ul>
+							<li>Defining a <em>news-item</em> custom element</li>
+							<li>CSS Styles kept within the element </li>
+							<li>Can be pierced through with <em>::shadow</em> <br>
+							or <em>/deep/</em>selectors</li>
+						</ul>
+							
+						</p>
+						<pre><code data-trim contenteditable>
+<dom-module id="news-item">
+	<style>
+      :host {
+        border: 2px solid;
+        border-color: var(--google-green-300);
+      }
+      div { color: var(--google-green-800); }
+      </style>
+      ...
+</dom-module>	
+</code></pre>
+					<p style="text-size:25px;"> To style the element in main.css use:</p>	
+                	<pre><code data-trim>
+news-item {	color: var(--paper-pink-400);  ... }
+                	</code></pre>
                 	</section>
                 	
+                	<section>
+                		<h2>Custom Elements: Template</h2>
+						<p style="text-size:25px">
+						<ul>
+							<li>Define element template as HTML code</li>
+							<li>Attributes binded with <em>{{attribute}}</em> tags</li>
+							<li>Content tags allow dynamic content, similar  to <br>
+							content within &lt;p&gt; tags</li>
+							<li>Read more on <a href="http://www.html5rocks.com/en/tutorials/webcomponents/template/">
+								Web Components Tutorial
+							</a></li>
+						</ul>
+						<pre><code data-trim contenteditable>
+...							
+<template>
+    <paper-item>
+        <a href={{link}} target="_blank">
+        <div id="newsId">{{news}}</div>
+        <div><hr></div>
+        <div id="newsDesc">{{desc}}</div>
+        <content></content>
+     </paper-item>
+</template>	
+</code></pre>
+                	</section>  
+                	
+                	<section>
+                		<h2>Custom Elements: Script</h2>
+						<p style="text-size:25px">
+						<ul>
+							<li>Define properties/ attributes of elements, 
+							initialise default values</li>
+							<li>Also have <a href="https://www.polymer-project.org/1.0/docs/devguide/properties.html">
+								Computed Properties
+							</a></li>
+							<li>Define functions/handlers for element property changes: 
+							Allows for two-way data-binding 
+							</li>
+						</ul>
+						<pre><code data-trim contenteditable>
+...							
+<script>
+Polymer({
+  is: "news-item",
+  ready: function() { console.log(this.news); },
+  properties: {
+    news: {
+      type: String,
+      value: "Twitter"
+    },
+    ...
+  }
+});
+</script>
+</code></pre>
+				</section>
+				
+				<section>
+					<h2>Custom Elements: Script</h2>
+						<pre><code data-trim contenteditable>
+...							
+<script>
+Polymer({
+  is: "news-item",
+  ready: function() { console.log(this.news); },
+  properties: {
+    news: {
+      type: String,
+      value: "Twitter"
+    },
+    ...
+  }
+});
+</script>
+</code></pre>					
+					<p style="text-size:25px; float:left;">
+						<ul>
+							<li>When element is constructed, <em>ready: function()</em> is called.</li>
+							<li>Console will log value of news</li>
+							<li>News is an attribute with type <em>String</em> and default value <em>Twitter</em></li>
+						</ul>
+					</p>					
+				</section>
+
                 </section>
+               
                 
                 <section>
                 	<section>
@@ -129,7 +332,8 @@
 							<tr>
 							<tr>
 								<td><strong>Best for</strong></td>
-								<td>Building encapsulated web components</td>
+								<td>Building encapsulated 
+								<a href="http://webcomponents.org/">web components</a></td>
 								<td>Framework for SPAs + data binding</td>
 								<td>Collection of tools</td>
 							<tr>
@@ -177,11 +381,11 @@
 								<tr>
 									<td><strong>Polymer + Angular</strong></td>
 									<td>
-										Best combination for full stack <br>
-										Mentioned in Google I/O 2015 <br>
+										Possible combination for full stack <br>
 										Had problems with conflicting templating syntax <br>
-										Solution: Change Angular <a href="https://docs.angularjs.org/api/ng/provider/$interpolateProvider">
-											Interpolate Provider</a>
+										Possible Solution: Change Angular <a href="https://docs.angularjs.org/api/ng/provider/$interpolateProvider">
+											Interpolate Provider</a><br>
+										<a href="http://www.binpress.com/blog/2014/06/26/polymer-vs-angular/">Polymer vs Angular?</a>
 									</td>
 								</tr>									
 							</tbody>
@@ -191,7 +395,8 @@
                 
             <section>
             	<h2>Final Thoughts</h2>
-            	<h1>Polymer is promising</h1>
+            	<h3>Polymer is promising</h3>
+            	<p>My internship is over! :) </p>
             </section>
             
             </div>
