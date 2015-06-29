@@ -4,7 +4,7 @@
 				var curSlide = Reveal.getCurrentSlide();
 				var img = document.createElement("img");
 				img.setAttribute('class', 'minion');
-				img.src = "./img/minion.jpg";
+				img.src = "./img/minion.png";
 				curSlide.appendChild(img);
 				
 			});
@@ -13,7 +13,7 @@
 				console.log('grrrr');
 				var img = document.createElement("img");
 				img.setAttribute('id', 'minion');
-				img.src = "./img/minion.jpg";
+				img.src = "./img/minion.png";
 				Reveal.getCurrentSlide().appendChild(img);
 
 				 $( "#minion" ).toggle( "shake" );
@@ -25,16 +25,17 @@
 			   alert("Lynnette loves Adrian!");
 			});
 			
-			Mousetrap.bind('r m e', function() {
-			    var minions = document.getElementsByClassName('minion');
-			    if (minions.length > 0) {
-			    	for (var i=0; i<minions.length; i++) {
-				    	if(minions[i] && minions[i].parentElement){
-							minions[i].parentElement.removeChild(minions[i]);
-						}			    		
-			    	}
-			    }
-
+			//Konami Code
+			Mousetrap.bind('q q q', function() {
+				console.log("song");
+			    var curSlide = Reveal.getCurrentSlide();
+			    var header = $("h2", curSlide);
+				var minionFrame = $('<iframe />', 
+					{ src: 'https://www.youtube.com/embed/Cxmu1mxK5so?autoplay=1',
+					  width: '560px',
+					  height: '315px'
+					});
+			    header.html(minionFrame);
 			});
 		
 			Reveal.initialize({

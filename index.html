@@ -30,8 +30,8 @@
             <div class="slides">
                 
                 <section>
-                    <h1>What I learnt Playing with Google Polymer</h1>
-                    <h2>June 2015</h2>
+                    <h2>What I learnt Playing with Google Polymer</h2>
+                    <h3>June 2015</h3>
                 </section>
                 
                 <section>
@@ -87,7 +87,7 @@ bower install --save PolymerElements/paper-drawer-panel#^1.0.0
                 	
                 	<section>
                 		<h2>Hyde Elements</h2>
-                		To Put Google Charts here 
+                		<img src="img/Slide3.jpg" width=1200px> 
                 	</section>
 
                 </section>
@@ -133,7 +133,7 @@ bower install --save PolymerElements/paper-drawer-panel#^1.0.0
 			exit-animation="fade-out-animation">
 </paper-dialog>
 </code></pre>
-					<img src="img/ripple.gif">
+					<img src="img/ripple.gif" width=1200px>
                 	</section>
                 	
                 <section>
@@ -164,7 +164,30 @@ bower install --save PolymerElements/paper-drawer-panel#^1.0.0
                 </section>
                 
                 <section>
-                	<h2>Google Web Components: Google Charts</h2>
+                	<h2>Google Web Components: Google-Charts</h2>
+                	<p style="text-size:25px;"> 
+                	<ul>
+                		<li>Implementation of Google Charts: Find detailed 
+                		parameters at <a href="https://google-developers.appspot.com/chart/interactive/docs/gallery">
+                			Google Visualisation API
+                		</a></li>
+                		<li>Can read in a 2D array or <a href="https://google-developers.appspot.com/chart/interactive/docs/reference#dataparam">
+                			JSON file in <em>DataTable</em> format
+                		</a></li>
+                		<li>Call <em>drawChart()</em> to resize charts</li>
+                	</ul>
+                	</p>
+
+<pre><code data-trim contenteditable>
+<google-chart
+  type='column'
+  options='{"title": "Dengue Cases in the Area", 
+      "vlabel": "Number of Cases",
+      "hlabel": "Years",
+      "label": "none"}'
+  data="cases.json">
+</google-chart>
+</code></pre>                	
                 </section>
                 	
                 </section>
