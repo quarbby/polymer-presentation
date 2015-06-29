@@ -9,6 +9,17 @@
 				
 			});
 			
+			Mousetrap.bind('g r r', function() {
+				console.log('grrrr');
+				var img = document.createElement("img");
+				img.setAttribute('id', 'minion');
+				img.src = "./img/minion.jpg";
+				Reveal.getCurrentSlide().appendChild(img);
+
+				 $( "#minion" ).toggle( "shake" );
+
+			});
+			
 			Mousetrap.bind('< 3', function() {
 			   console.log("<3"); 
 			   alert("Lynnette loves Adrian!");
