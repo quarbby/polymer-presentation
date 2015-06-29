@@ -25,7 +25,10 @@
 			   alert("Lynnette loves Adrian!");
 			});
 			
-			//Konami Code
+			Mousetrap.bind('E >', function() {
+			   alert("Thank you Adrian for loving Lynnette!");
+			});			
+			
 			Mousetrap.bind('q q q', function() {
 				console.log("song");
 			    var curSlide = Reveal.getCurrentSlide();
